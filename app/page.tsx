@@ -836,7 +836,7 @@ function TaskDetailView({
   getStatusColor: (status: Task["status"]) => string
 }) {
   const [newSubtask, setNewSubtask] = useState("")
-  const [newInfo, setNewInfo] = useState({ title: "", content: "", type: "note" as const, url: "" })
+  const [newInfo, setNewInfo] = useState<{ title: string; content: string; type: "note" | "link" | "document"; url: string }>({ title: "", content: "", type: "note", url: "" })
   const [isEditing, setIsEditing] = useState(false)
   const [editForm, setEditForm] = useState({
     text: task.text,
